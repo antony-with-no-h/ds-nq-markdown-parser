@@ -1,0 +1,40 @@
+package scanner
+
+const (
+	TEXT = iota + 1
+	HASH
+	UNDERSCORE
+	STAR
+	NEWLINE
+	DASH
+	BRACKETOPEN
+	BRACKETCLOSE
+	PARENOPEN
+	PARENCLOSE
+	BACKTICK
+	GREATERTHAN
+	BANG
+)
+
+type Token struct {
+	Pos   uint
+	Kind  uint
+	Line  uint
+	Value string
+}
+
+var TOKEN_LOOKUP = map[uint]string{
+	HASH:         "HASH",
+	UNDERSCORE:   "UNDERSCORE",
+	STAR:         "STAR",
+	NEWLINE:      "NEWLINE",
+	DASH:         "DASH",
+	BRACKETOPEN:  "BRACKETOPEN",
+	BRACKETCLOSE: "BRACKETCLOSE",
+	PARENOPEN:    "PARENOPEN",
+	PARENCLOSE:   "PARENCLOSE",
+	GREATERTHAN:  "GREATERTHAN",
+	BACKTICK:     "BACKTICK",
+	TEXT:         "TEXT",
+	BANG:         "BANG",
+}
